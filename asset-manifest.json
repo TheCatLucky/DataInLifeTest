@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TheCatLucky/DataInLifeTest/static/css/main.66860204.css",
+    "main.js": "/TheCatLucky/DataInLifeTest/static/js/main.7e75d8ad.js",
+    "index.html": "/TheCatLucky/DataInLifeTest/index.html",
+    "main.66860204.css.map": "/TheCatLucky/DataInLifeTest/static/css/main.66860204.css.map",
+    "main.7e75d8ad.js.map": "/TheCatLucky/DataInLifeTest/static/js/main.7e75d8ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66860204.css",
+    "static/js/main.7e75d8ad.js"
+  ]
+}
