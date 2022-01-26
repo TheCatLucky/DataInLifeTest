@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/DataInLifeTest/static/css/main.66860204.css",
-    "main.js": "/DataInLifeTest/static/js/main.17add016.js",
+    "main.css": "/DataInLifeTest/static/css/main.7b227b40.css",
+    "main.js": "/DataInLifeTest/static/js/main.121dfa14.js",
     "index.html": "/DataInLifeTest/index.html",
-    "main.66860204.css.map": "/DataInLifeTest/static/css/main.66860204.css.map",
-    "main.17add016.js.map": "/DataInLifeTest/static/js/main.17add016.js.map"
+    "main.7b227b40.css.map": "/DataInLifeTest/static/css/main.7b227b40.css.map",
+    "main.121dfa14.js.map": "/DataInLifeTest/static/js/main.121dfa14.js.map"
   },
   "entrypoints": [
-    "static/css/main.66860204.css",
-    "static/js/main.17add016.js"
+    "static/css/main.7b227b40.css",
+    "static/js/main.121dfa14.js"
   ]
 }
