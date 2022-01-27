@@ -18,10 +18,10 @@ const Footer = () => {
       formData.append(key, selected[key]);
     }
     dispatch(sendProducts(formData));
+    dispatch(getProducts());
     dispatch(setSelectedToZero());
-    dispatch(getProducts())
     alert("Товары отправлены!");
-    window.location.reload();
+    //window.location.reload();
   }
   return (
     <div className={style.total}>

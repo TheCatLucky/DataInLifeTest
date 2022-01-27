@@ -9,8 +9,10 @@ import Table from './components/Table/table';
 import { getProducts } from './Store/Reducers/productsReducer';
 function App() {
   const dispatch = useDispatch()
+  const state = useSelector(state => state.products.products[0]);
   useEffect(() => {
-    dispatch(getProducts())
+    if (!state) {
+    dispatch(getProducts())}
  },[])
   return (
     <div>

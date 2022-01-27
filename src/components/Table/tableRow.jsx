@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setGoodAmount, setSelected, setTotalAmount, setTotalPrice } from '../../Store/Reducers/productsReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { setGoodAmount, setSelected, setSelectedToZero, setTotalAmount, setTotalPrice } from '../../Store/Reducers/productsReducer';
 import style from "./table.module.css";
 
 const TableRow = (props) => {
   const [amount, setAmount] = useState(props.amount);
   const [total, setTotal] = useState(props.totalPrice);
+  useEffect(() => {
+    setAmount(props.amount);
+    setTotal(props.totalPrice);
+  }, [props.amount, props.totalPrice])
+   
   const dispatch = useDispatch()
   const handleAmount = (e) => {
     if (e.target.value <0 ) {
