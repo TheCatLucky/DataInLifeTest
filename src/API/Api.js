@@ -12,7 +12,7 @@ export const tableAPI = {
     return axios({
       method:'post',
       url:" https://datainlife.ru/junior_task/add_basket.php",
-      data: formData
+      data: formData,
     })
   }
 }

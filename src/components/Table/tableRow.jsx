@@ -8,6 +8,10 @@ const TableRow = (props) => {
   const [total, setTotal] = useState(props.totalPrice);
   const dispatch = useDispatch()
   const handleAmount = (e) => {
+    if (e.target.value <0 ) {
+      setAmount("")
+      return;
+    }
     const price = e.target.value * props.price;
     setAmount(e.target.value);
     setTotal(price);
@@ -31,6 +35,8 @@ const TableRow = (props) => {
       <td>
         <input className={style.input}
           type={"number"}
+          min={"0"}
+          max={"99"}
           value={amount}
           onChange={(e) => handleAmount(e)}
           onBlur={handleChange}

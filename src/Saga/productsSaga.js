@@ -13,7 +13,7 @@ function* fetchProductsWorker() {
         catg.rname = "Без категории"
       }
       return (catg.goods.map(good => {
-        good.amount = 0
+        good.amount = ""
         good.totalPrice = 0
         return good;
       }))

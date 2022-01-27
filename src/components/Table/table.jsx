@@ -5,7 +5,7 @@ import TableRow from './tableRow';
 const Table = (props) => {
   return (
     <div key={23} >
-      {props.products.map(( p, index) => {
+      {props.products.map((p, index) => {
         return (
           <table className={style.table} key={index} >
             <thead className={style.thead} key={p.rname}>
@@ -13,6 +13,13 @@ const Table = (props) => {
                 <td colSpan="5"  >
                   <h1>{p.rname || "Без категории"}</h1>
                 </td>
+              </tr>
+              <tr>
+                <td>Id</td>
+                <td>Название</td>
+                <td>Цена</td>
+                <td>Количество</td>
+                <td>Сумма</td>
               </tr>
             </thead>
             <tbody >
