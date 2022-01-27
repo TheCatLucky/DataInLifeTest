@@ -15,6 +15,13 @@ const CurrentTable = (props) => {
                   <h1>{p.rname}</h1>
                 </td>
               </tr>
+              <tr>
+                <td>Id</td>
+                <td>Название</td>
+                <td>Цена</td>
+                <td>Количество</td>
+                <td>Сумма</td>
+              </tr>
             </thead>
             <tbody>
               {p.goods.map(product => {

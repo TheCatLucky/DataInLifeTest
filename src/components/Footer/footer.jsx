@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from "./footer.module.css";
-import { sendProducts, getProducts } from './../../Store/Reducers/productsReducer';
+import { sendProducts, getProducts, setSelectedToZero } from './../../Store/Reducers/productsReducer';
 
 const Footer = () => {
   const totalAmount = useSelector(state => state.products.totalAmount)
@@ -18,8 +18,10 @@ const Footer = () => {
       formData.append(key, selected[key]);
     }
     dispatch(sendProducts(formData));
+    dispatch(setSelectedToZero());
+    dispatch(getProducts())
     alert("Товары отправлены!");
-    
+    window.location.reload();
   }
   return (
     <div className={style.total}>

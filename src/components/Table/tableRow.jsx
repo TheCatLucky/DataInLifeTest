@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setGoodAmount, setSelected, setTotalAmount, setTotalPrice } from '../../Store/Reducers/productsReducer';
 import style from "./table.module.css";

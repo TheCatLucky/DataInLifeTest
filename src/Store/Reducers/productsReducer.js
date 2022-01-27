@@ -3,6 +3,7 @@ const SET_PRODUCTS = "SET_PRODUCTS"
 const SET_TOTAL_PRICE = "SET_TOTAL_PRICE"
 const SET_TOTAL_AMOUNT = "SET_TOTAL_AMOUNT"
 const SET_SELECTED = "SET_SELECTED"
+const SET_SELECTED_TO_ZERO = "SET_SELECTED_TO_ZERO"
 export const GET_PRODUCTS = "GET_PRODUCTS"
 export const SEND_PRODUCTS = "SEND_PRODUCTS"
 export const SET_GOOD_AMOUNT = "SET_GOOD_AMOUNT"
@@ -42,6 +43,13 @@ export const productsReducer = (state = initialState, action) => {
         ...state,
         products: changeGood(state.products,action.id, action.amount, action.price)
       }
+    case SET_SELECTED_TO_ZERO:
+      return {
+        ...state,
+        totalPrice: 0,
+        totalAmount: 0,
+        selected : {}
+      }
   
     default:
       return state
@@ -49,6 +57,7 @@ export const productsReducer = (state = initialState, action) => {
 }
 
 export const setProducts = (payload) => ({ type: SET_PRODUCTS, payload })
+export const setSelectedToZero = () => ({ type: SET_SELECTED_TO_ZERO })
 export const setTotalPrice = (payload) => ({ type: SET_TOTAL_PRICE, payload })
 export const setTotalAmount = (payload) => ({ type: SET_TOTAL_AMOUNT, payload })
 export const setSelected = (payload) => ({ type: SET_SELECTED, payload })
