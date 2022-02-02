@@ -1,15 +1,15 @@
-export const changeGood = (catg, actionId, goodAmount, goodPrice) => {
+export const changeGood = (catg, { id, amount, price }) => {
   return catg.map(goods => {
     goods.goods = goods.goods.map(good => {
-      if (good.gid === actionId) {
+      if (good.gid === id) {
         return {
           ...good,
-          amount: goodAmount,
-          totalPrice: goodPrice
-        }
+          amount: amount,
+          totalPrice: price
+        };
       }
-      return good
-    })
-    return goods
-  })
-}
+      return good;
+    });
+    return goods;
+  });
+};

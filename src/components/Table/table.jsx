@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import style from "./table.module.css";
-import TableRow from './tableRow';
+import TableRow from "./tableRow";
 
-const Table = (props) => {
+const Table = ({ products }) => {
   return (
     <div key={23} >
-      {props.products.map((p, index) => {
+      {products.map((p) => {
         return (
-          <table className={style.table} key={index} >
-            <thead className={style.thead} key={p.rname}>
+          <table className={style.table} key={p.rid} >
+            <thead className={style.thead} >
               <tr >
                 <td colSpan="5"  >
-                  <h1>{p.rname || "Без категории"}</h1>
+                  <h1>{p.rname}</h1>
                 </td>
               </tr>
               <tr>
@@ -26,20 +26,20 @@ const Table = (props) => {
               {p.goods.map(product => {
                 return (
                   <tr key={product.gid}>
-                    <TableRow key={product.gid}
+                    <TableRow
                       id={product.gid}
                       name={product.gname}
                       price={product.gprice}
                       amount={product.amount}
                       totalPrice={product.totalPrice} />
-                  </tr>)
+                  </tr>);
               })}
             </tbody>
           </table>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
 export default Table;

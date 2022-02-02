@@ -1,0 +1,6 @@
+{
+  "prettier.tabWidth": 5,
+  "prettier.printWidth": 20,
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.preferences.quoteStyle": "double"
+}

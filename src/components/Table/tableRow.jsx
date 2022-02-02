@@ -1,42 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setGoodAmount, setSelected, setSelectedToZero, setTotalAmount, setTotalPrice } from '../../Store/Reducers/productsReducer';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setGoods, setSelected } from "../../Store/Reducers/productsReducer";
 import style from "./table.module.css";
 
-const TableRow = (props) => {
-  const [amount, setAmount] = useState(props.amount);
-  const [total, setTotal] = useState(props.totalPrice);
-  useEffect(() => {
-    setAmount(props.amount);
-    setTotal(props.totalPrice);
-  }, [props.amount, props.totalPrice])
-   
-  const dispatch = useDispatch()
+const TableRow = ({ amount, totalPrice, price, id, name }) => {
+  const dispatch = useDispatch();
   const handleAmount = (e) => {
-    if (e.target.value <0 ) {
-      setAmount("")
+    const currentPrice = e.target.value * price;
+    const totalAmount = e.target.value - amount;
+    if (e.target.value < 0) {
       return;
     }
-    const price = e.target.value * props.price;
-    setAmount(e.target.value);
-    setTotal(price);
-    dispatch(setGoodAmount(e.target.value,props.id, price))
-    dispatch(setTotalAmount(e.target.value - amount));
-    dispatch(setTotalPrice(e.target.value * props.price - amount * props.price ));
-  }
-  const handleChange = () => {
-    if (amount > 0) {
-      const productToDispatch = {};
-      const prod = `product[${props.id}]`;
-      productToDispatch[prod] = +amount
-      dispatch(setSelected(productToDispatch))
+    if (e.target.value > 99) {
+      return 99;
     }
-  }
+    dispatch(setGoods(e.target.value, id, currentPrice, totalAmount, currentPrice - totalPrice));
+  };
+  const handleChange = () => {
+    const productToSelect = {};
+    const prod = `product[${id}]`;
+    productToSelect[prod] = +amount;
+    dispatch(setSelected(productToSelect));
+  };
   return (
     <>
-      <td>{props.id}</td>
-      <td>{props.name}</td>
-      <td>{props.price}</td>
+      <td>{id}</td>
+      <td>{name}</td>
+      <td>{price}</td>
       <td>
         <input className={style.input}
           type={"number"}
@@ -47,9 +37,9 @@ const TableRow = (props) => {
           onBlur={handleChange}
         ></input>
       </td>
-      <td>{total}</td>
+      <td>{totalPrice}</td>
     </>
-  )
-}
+  );
+};
 
-export default TableRow
+export default TableRow;

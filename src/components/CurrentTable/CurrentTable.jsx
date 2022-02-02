@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import style from "./../Table/table.module.css";
-import TD from './../Table/tableRow';
+import TD from "../Table/tableRow";
 
-const CurrentTable = (props) => {
-  let currentProd = [props.products.find((e) => e.rid === props.id)];
+const CurrentTable = ({ products, id}) => {
+  let currentProd = [products.find((e) => e.rid === id)];
   return (
     <div >
       {currentProd.map(p => {
@@ -29,14 +29,14 @@ const CurrentTable = (props) => {
                   <tr key={product.gid}>
                     <TD key={product.gid} id={product.gid} name={product.gname} price={product.gprice} amount={product.amount}
                       totalPrice={product.totalPrice} />
-                  </tr>)
+                  </tr>);
               })}
             </tbody>
           </table>
-        )
-      })} 
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
 export default CurrentTable;

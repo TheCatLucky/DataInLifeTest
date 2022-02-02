@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import style from "./Navigation.module.css";
-const Navigation = (props) => {
+import style from "./navigation.module.css";
+const Navigation = ({ sections}) => {
   return (
     <ul className={style.list}>
       {
-        props.sections.map(e => <Link to={`/catg${e.rid}`} key={e.rname || "rand"} className={style.listItem}>{e.rname || "Без категории"}</Link>)
+        sections.map(e => <Link to={`/catg${e.rid}`} key={e.rname || "rand"} className={style.listItem}>{e.rname || "Без категории"}</Link>)
       }
     </ul>
-  )
-}
+  );
+};
 
 
 
-export default Navigation
+export default Navigation;
