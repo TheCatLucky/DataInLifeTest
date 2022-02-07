@@ -1,12 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import style from "./footer.module.css";
-import { sendProducts, getProducts, setSelectedToZero } from "./../../Store/Reducers/productsReducer";
+import style from "./Footer.module.css";
+import { sendProducts, getProducts, setSelectedToZero } from "../../Store/Reducers/ProductsReducer";
+import { getStateProducts } from "../../Store/Selectors/Selectors";
 
 const Footer = () => {
-  const totalAmount = useSelector(state => state.products.totalAmount);
-  const totalPrice = useSelector(state => state.products.totalPrice);
-  const selected = useSelector(state => state.products.selected);
+  const { totalAmount, totalPrice, selected } = useSelector(getStateProducts);
   const dispatch = useDispatch();
   const handleClick = () => {
     if (totalAmount === 0) {
@@ -17,6 +16,7 @@ const Footer = () => {
     for (let key in selected) {
       formData.append(key, selected[key]);
     }
+    console.log(formData);
     dispatch(sendProducts(formData));
     dispatch(getProducts());
     dispatch(setSelectedToZero());

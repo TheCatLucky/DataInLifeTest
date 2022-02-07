@@ -1,5 +1,5 @@
-import { changeGood } from "./../../Helper/helper";
-import { manageSelected } from "./../../Helper/deleteSelectedItem";
+import { changeGood } from "../../Helper/Helper";
+import { manageSelected } from "../../Helper/DeleteSelectedItem";
 const SET_PRODUCTS = "SET_PRODUCTS";
 const SET_TOTAL_PRICE = "SET_TOTAL_PRICE";
 const SET_TOTAL_AMOUNT = "SET_TOTAL_AMOUNT";

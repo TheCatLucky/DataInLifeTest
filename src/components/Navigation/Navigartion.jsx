@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "./navigation.module.css";
-const Navigation = ({ sections}) => {
+import style from "./Navigation.module.css";
+const Navigation = ({ sections }) => {
   return (
     <ul className={style.list}>
       {

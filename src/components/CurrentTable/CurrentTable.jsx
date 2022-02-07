@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./../Table/table.module.css";
-import TD from "../Table/tableRow";
+import style from "./../Table/Table.module.css";
+import TD from "../Table/TableRow";
 
 const CurrentTable = ({ products, id}) => {
   let currentProd = [products.find((e) => e.rid === id)];

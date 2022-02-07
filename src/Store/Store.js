@@ -1,8 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { rootWatcher } from "../Saga";
-import { productsReducer } from "./Reducers/productsReducer";
+import { productsReducer } from "./Reducers/ProductsReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { rootWatcher } from "../Saga/Saga";
 const sagaMiddleware = createSagaMiddleware();
 
 const saveToLocalStorage = (state) => {

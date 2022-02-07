@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./table.module.css";
-import TableRow from "./tableRow";
+import style from "./Table.module.css";
+import TableRow from "./TableRow";
 
 const Table = ({ products }) => {
   return (

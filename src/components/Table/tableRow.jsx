@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setGoods, setSelected } from "../../Store/Reducers/productsReducer";
-import style from "./table.module.css";
+import { setGoods, setSelected } from "../../Store/Reducers/ProductsReducer";
+import style from "./Table.module.css";
 
 const TableRow = ({ amount, totalPrice, price, id, name }) => {
   const dispatch = useDispatch();
