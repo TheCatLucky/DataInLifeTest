@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { tableAPI } from "../API/Api";
-import { GET_PRODUCTS, SEND_PRODUCTS, setProducts } from "../Store/Reducers/ProductsReducer";
+import { GET_PRODUCTS, SEND_PRODUCTS, setProducts } from "../Store/Actions/ProfileActions";
 
 const getProducts = () => tableAPI.getProducts();
 const sendProducts = (e) => tableAPI.sendProducts(e);

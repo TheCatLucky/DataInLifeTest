@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import style from "./Footer.module.css";
-import { sendProducts, getProducts, setSelectedToZero } from "../../Store/Reducers/ProductsReducer";
+import { sendProducts, getProducts, setSelectedToZero } from "../../Store/Actions/ProfileActions";
 import { getStateProducts } from "../../Store/Selectors/Selectors";
 
 const Footer = () => {

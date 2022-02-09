@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setGoods, setSelected } from "../../Store/Reducers/ProductsReducer";
+import { setGoods, setSelected } from "../../Store/Actions/ProfileActions";
 import style from "./Table.module.css";
 
 const TableRow = ({ amount, totalPrice, price, id, name }) => {

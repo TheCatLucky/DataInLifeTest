@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, useParams } from "react-router";
+import { useParams } from "react-router";
 import style from "./App.module.css";
+import AppRouter from "./components/AppRouter/AppRoutes";
 import CurrentTable from "./components/CurrentTable/CurrentTable";
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Navigartion";
 import Table from "./components/Table/Table";
-import { getProducts } from "./Store/Reducers/ProductsReducer";
+import { getProducts } from "./Store/Actions/ProfileActions";
 function App() {
   const dispatch = useDispatch();
   const state = useSelector(state => state.products.products[0]);
@@ -17,15 +18,10 @@ function App() {
   }, []);
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/catg:id" element={<Layout />} />
-        <Route path="*" element={<Layout />} />
-      </Routes>
+      <AppRouter />
     </div>
   );
 }
-
 export const Layout = () => {
   const products = useSelector(state => state.products.products);
   const { id } = useParams();
@@ -44,5 +40,6 @@ export const Layout = () => {
     </div>
   );
 };
+
 
 export default App;
